@@ -1,8 +1,6 @@
-import io.kotless.MimeType
+package com.doggy.kotless.sample
+
 import io.kotless.dsl.lang.http.Get
 
-@Get(
-  path = "/",
-  mime = MimeType.PLAIN,
-)
+@Get("/")
 fun hello(): String = "Hello Server-Side Kotlin Meetup!"

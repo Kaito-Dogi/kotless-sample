@@ -6,7 +6,7 @@ plugins {
   id("io.kotless") version "0.2.0" apply true
 }
 
-group = "com.doggy"
+group = "com.doggy.kotless.sample"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -44,7 +44,7 @@ kotless {
   webapp {
     lambda {
       kotless {
-        packages = setOf("com.doggy")
+        packages = setOf("com.doggy.kotless.sample")
       }
 
       memoryMb = 1024

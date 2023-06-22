@@ -49,6 +49,10 @@ kotless {
     terraform {
       allowDestroy = true
     }
+
+    local {
+      useAWSEmulation = true
+    }
   }
 }
 

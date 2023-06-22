@@ -28,17 +28,17 @@ kotless {
   config {
     aws {
       storage {
-        bucket = "kotless.s3.example.com"
+        bucket = "doggy-kotless-sample"
       }
-      profile = "example"
-      region = "eu-west-1"
+      profile = "default"
+      region = "us-east-1"
     }
   }
 
   webapp {
     lambda {
       kotless {
-        packages = setOf("com.example.kotless")
+        packages = setOf("com.doggy")
       }
       memoryMb = 1024
       timeoutSec = 120

@@ -2,7 +2,7 @@ import io.kotless.plugin.gradle.dsl.kotless
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  kotlin("jvm") version "1.5.31" apply true
+  kotlin("jvm") version "1.6.10" apply true
   id("io.kotless") version "0.2.0" apply true
 }
 

@@ -1,7 +1,8 @@
 import io.kotless.plugin.gradle.dsl.kotless
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  kotlin("jvm") version "1.8.21" apply true
+  kotlin("jvm") version "1.5.31" apply true
   id("io.kotless") version "0.2.0" apply true
 }
 
@@ -24,12 +25,17 @@ tasks.test {
   useJUnitPlatform()
 }
 
+tasks.withType<KotlinCompile>() {
+  kotlinOptions.jvmTarget = "11"
+}
+
 kotless {
   config {
     aws {
       storage {
         bucket = "doggy-kotless-sample"
       }
+
       profile = "default"
       region = "us-east-1"
     }
@@ -40,6 +46,7 @@ kotless {
       kotless {
         packages = setOf("com.doggy")
       }
+
       memoryMb = 1024
       timeoutSec = 120
     }
@@ -54,8 +61,4 @@ kotless {
       useAWSEmulation = true
     }
   }
-}
-
-kotlin {
-  jvmToolchain(11)
 }
